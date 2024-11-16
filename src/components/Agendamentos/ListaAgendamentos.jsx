@@ -22,8 +22,10 @@ export const ListaAgendamentos = ({
 						{totalVagas} vagas liberadas
 					</span>
 					<span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">
-						{agendamentos.length} agendados
+						{agendamentos.length}{" "}
+						{agendamentos.length === 1 ? "agendamento" : "agendamentos"}
 					</span>
+
 					<span
 						className={`px-3 py-1 rounded-full text-sm ${
 							vagasDisponiveis > 0
@@ -57,7 +59,7 @@ export const ListaAgendamentos = ({
 										>
 											<X className="w-4 h-4 text-gray-400 group-hover:text-red-500" />
 										</button>
-									)} 	
+									)}
 								</div>
 								<div className="flex items-center gap-2 flex-shrink-0">
 									<span
@@ -71,7 +73,6 @@ export const ListaAgendamentos = ({
 									>
 										{agendamento.status}
 									</span>
-									
 								</div>
 							</div>
 
