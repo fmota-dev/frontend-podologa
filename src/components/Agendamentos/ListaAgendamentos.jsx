@@ -1,4 +1,13 @@
-import { Heart, Mail, Phone, User, Users, X } from "lucide-react";
+import {
+	Calendar,
+	CheckCircle,
+	Heart,
+	Mail,
+	Phone,
+	User,
+	Users,
+	X,
+} from "lucide-react";
 import React from "react";
 
 export const ListaAgendamentos = ({
@@ -12,7 +21,7 @@ export const ListaAgendamentos = ({
 
 	return (
 		<div className="bg-white rounded-lg shadow p-4">
-			<div className="flex flex-wrap items-center justify-between mb-4">
+			<div className="flex flex-wrap items-center justify-between mb-4 gap-2">
 				<h2 className="text-lg font-semibold">
 					Agendamentos para {formatarData(selectedDate)}
 				</h2>
@@ -21,18 +30,19 @@ export const ListaAgendamentos = ({
 						<Users className="w-4 h-4" />
 						{totalVagas} vagas liberadas
 					</span>
-					<span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">
+					<span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+						<Calendar className="w-4 h-4" />
 						{agendamentos.length}{" "}
 						{agendamentos.length === 1 ? "agendamento" : "agendamentos"}
 					</span>
-
 					<span
-						className={`px-3 py-1 rounded-full text-sm ${
+						className={`px-3 py-1 rounded-full text-sm flex items-center gap-1 ${
 							vagasDisponiveis > 0
 								? "bg-green-100 text-green-600"
 								: "bg-red-100 text-red-600"
 						}`}
 					>
+						<CheckCircle className="w-4 h-4" />
 						{vagasDisponiveis} disponíveis
 					</span>
 				</div>
